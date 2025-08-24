@@ -1,0 +1,10 @@
+# 忽略 lazy.nvim 插件快取
+lazy/
+plugin/packer_compiled.lua
+
+# 忽略 Neovim 的暫存檔
+*.swp
+*.swo
+*.bak
+session/
+
