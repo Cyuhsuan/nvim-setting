@@ -13,3 +13,5 @@ vim.keymap.set("n", "<A-=>", "<C-w>=")
 vim.keymap.set("i", "jj", "<Esc>")
 -- termail change
 vim.keymap.set("t", "jk", [[<C-\><C-n>]], { noremap = true })
+-- buffer 管理
+vim.keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "Close other buffers" })
