@@ -25,3 +25,10 @@ vim.keymap.set("n", "<leader>e", function()
     reveal = true,
   })
 end, { desc = "Explorer Neo-tree (cwd)" })
+-- 跳到下一個 "(" 的裡面
+vim.keymap.set("n", "<leader>)", function()
+  local pos = vim.fn.search("(", "W") -- 往後找 "("（W 不換窗口）
+  if pos ~= 0 then
+    vim.cmd("normal! l")
+  end -- 光標移到 "(" 後一格 = 括號內
+end, { desc = "Jump inside next (“)” pair" })
