@@ -8,3 +8,7 @@ plugin/packer_compiled.lua
 *.bak
 session/
 
+# 忽略 AI 工具目錄
+.claude/
+.serena/
+

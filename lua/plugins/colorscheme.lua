@@ -1,18 +1,22 @@
 return {
   {
     "catppuccin/nvim",
-    opts = function(_, opts)
-      local module = require("catppuccin.groups.integrations.bufferline")
-      if module then
-        module.get = module.get_theme
-      end
-      return opts
-    end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin",
     },
+  },
+  {
+    "catppuccin/nvim",
+    config = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_set_hl(0, "LineNr", { fg = "#8888aa" })
+          vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffcc66", bold = true })
+        end,
+      })
+    end,
   },
 }
