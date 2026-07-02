@@ -67,23 +67,6 @@ return {
     },
   },
 
-  -- Git 狀態面板（像 Magit），整合 Diffview
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim", -- 自動接 Diffview
-      "nvim-telescope/telescope.nvim", -- 可選：Pickers
-    },
-    config = function()
-      require("neogit").setup({
-        integrations = { diffview = true, telescope = true },
-        kind = "tab", -- 狀態面板開在新 tab，也可設 "split" / "floating"
-      })
-      vim.keymap.set("n", "<leader>gs", ":Neogit<CR>", { desc = "Neogit: status" })
-    end,
-  },
-
   -- 在 nvim 呼叫 LazyGit（需系統已安裝 lazygit）
   {
     "kdheepak/lazygit.nvim",
