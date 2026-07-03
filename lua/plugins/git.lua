@@ -43,6 +43,14 @@ return {
         ignore_whitespace = false,
       },
       current_line_blame_formatter = "\u{f2c0} <author>, <author_time:%Y-%m-%d> - <summary>",
+      -- blame_line / preview_hunk 浮動視窗的外框
+      preview_config = {
+        border = "rounded", -- single / double / rounded / solid / shadow
+        style = "minimal",
+        relative = "cursor",
+        row = 0,
+        col = 1,
+      },
       signs = {
         add = { text = "│" },
         change = { text = "│" },
