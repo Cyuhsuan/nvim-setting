@@ -14,6 +14,8 @@ return {
           vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffcc66", bold = true })
           -- (3) active window 亮色分隔線
           vim.api.nvim_set_hl(0, "WinSeparatorActive", { fg = "#89b4fa" }) -- catppuccin blue
+          -- current_line_blame 行尾提示：暖褐灰，與冷灰的 Comment(#6c7086) 明顯區隔
+          vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#9a7e6b", italic = true })
           -- 注意：inactive window 的整片調暗（含語法高亮彩色字）改由 tint.nvim 負責，
           -- 見 lua/plugins/tint.lua。此處不再手動覆寫 NormalNC。
         end,
