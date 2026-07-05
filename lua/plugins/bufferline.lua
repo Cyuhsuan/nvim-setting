@@ -57,6 +57,14 @@ return {
   -- 讓 catppuccin 產生的 bufferline highlight 基底正確
   {
     "catppuccin/nvim",
+    -- LazyVim 的 colorscheme.lua 呼叫 .get()，但當前 catppuccin 已改名為 .get_theme()。
+    -- init 在啟動時（所有外掛載入前）執行，確保 bufferline 的 opts function 執行前別名已就位。
+    init = function()
+      local ok, m = pcall(require, "catppuccin.groups.integrations.bufferline")
+      if ok and not m.get and m.get_theme then
+        m.get = m.get_theme
+      end
+    end,
     opts = {
       integrations = {
         bufferline = true,

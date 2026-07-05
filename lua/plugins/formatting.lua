@@ -9,6 +9,8 @@ return {
       javascriptreact = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      -- php
+      php = { "php_cs_fixer" },
       -- Web 相關格式化
       html = { "prettier" },
       css = { "prettier" },
@@ -19,19 +21,13 @@ return {
       -- 其他格式
       markdown = { "prettier" },
     },
-    -- 格式化選項
-    format_on_save = {
-      -- 自動格式化的文件類型
-      timeout_ms = 500,
-      lsp_fallback = true,
-    },
     -- Prettier 配置，支持 Tailwind CSS 類排序
     formatters = {
       prettier = {
         options = {
           ft_parsers = {
             javascript = "babel",
-            javascriptreact = "babel", 
+            javascriptreact = "babel",
             typescript = "typescript",
             typescriptreact = "typescript",
           },
@@ -42,3 +38,4 @@ return {
     },
   },
 }
+
